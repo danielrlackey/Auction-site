@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, } from "react-router-dom";
-import BrowseItemsPage from "../components/BrowseItemsPage";
-import FighterFacts from "../components/FighterFacts.js";
-import FighterRankings from "../components/FighterRankings.js";
-import HomePage from "../components/HomePage.js";
-import NotFoundPage from "../components/NotFoundPage";
-import SellItemPage from "../components/SellItemPage";
+import BrowseItemsPage from "../components/BrowseItemsPage.jsx";
+import FighterFacts from "../components/FighterFacts.jsx";
+import FighterRankings from "../components/FighterRankings.jsx";
+import HomePage from "../components/HomePage.jsx";
+import NotFoundPage from "../components/NotFoundPage.jsx";
+import SellItemPage from "../components/SellItemPage.jsx";
 
 
 
