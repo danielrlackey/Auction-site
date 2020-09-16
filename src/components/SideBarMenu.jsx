@@ -1,7 +1,10 @@
 import React from 'react';
 import Drawer from '@material-ui/core/Drawer';
-import { withStyles } from '@material-ui/core/styles';
 import {styles} from "./SideBarMenu.styles.js";
+import { withStyles } from '@material-ui/core/styles';
+
+
+
 const SideBarMenu = (props) => {
 
   const {setSideBarMenuOpen,

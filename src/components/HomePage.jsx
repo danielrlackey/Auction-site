@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar.jsx"
 import SideBarMenu from "./SideBarMenu.jsx";
 
-// import HomePageDisplay from ".components/HomePageDisplay.jsx";
+// import HomePageImageDisplay from ".components/HomePageImageDisplay.jsx";
 
 
 
@@ -16,7 +16,7 @@ const HomePage = (props) => {
         <div>
             <div>
                 <Navbar
-                setSideBarMenuOpen={setSideBarMenuOpen}
+                    setSideBarMenuOpen={setSideBarMenuOpen}
                 />
                 {sideBarMenuOpen &&
                 <SideBarMenu
