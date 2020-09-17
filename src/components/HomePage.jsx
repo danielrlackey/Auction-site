@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import HomePageHeader from "./HomePageHeader.jsx"
 import HomePageImageDisplay from "../components/HomePageImageDisplay";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar.jsx"
@@ -27,6 +28,7 @@ const HomePage = (props) => {
                     rankings={<Link to="rankings">Rankings </Link>}
                 />
                 }
+                <HomePageHeader/>
                 <HomePageImageDisplay />
             </div> 
         </div>
