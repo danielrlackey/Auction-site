@@ -8,6 +8,9 @@ import boxingpic1 from '../images/boxingpic1.jpg'
 import boxingpic2 from '../images/boxingpic2.jpg'
 import boxingpic3 from '../images/boxingpic3.jpg'
 import boxingpic4 from '../images/boxingpic4.jpeg'
+import boxingpic5 from '../images/boxingpic5.jpg'
+import boxingpic6 from '../images/boxingpic6.jpg'
+import boxingpic7 from '../images/boxingpic7.jpg'
 
 
 class HomePageImageDisplay extends React.Component {
@@ -20,6 +23,9 @@ class HomePageImageDisplay extends React.Component {
             boxingpic2,
             boxingpic3,
             boxingpic4,
+            boxingpic5,
+            boxingpic6,
+            boxingpic7,
 
         ],
         showModal: false,

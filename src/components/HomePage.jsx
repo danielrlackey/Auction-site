@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import FooterPage from "./FooterPage.jsx";
 import HomePageHeader from "./HomePageHeader.jsx"
 import HomePageImageDisplay from "../components/HomePageImageDisplay";
 import { Link } from "react-router-dom";
@@ -30,6 +31,7 @@ const HomePage = (props) => {
                 }
                 <HomePageHeader/>
                 <HomePageImageDisplay />
+                <FooterPage />
             </div> 
         </div>
     )

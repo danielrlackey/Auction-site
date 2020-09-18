@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FooterPage from "./FooterPage.jsx";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar.jsx";
 import SideBarMenu from "./SideBarMenu.jsx";
@@ -23,6 +24,9 @@ const FighterFacts = (props) => {
                 }
             <p>A page where you can get facts on fighters</p>
             <Link to="/">Home</Link>
+            <div>
+                <FooterPage />
+            </div>
         </div>
     )
 };

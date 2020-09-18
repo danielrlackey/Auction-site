@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import FooterPage from "./FooterPage.jsx";
+import ImageLoader from "./ImageUploader.jsx";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar.jsx";
 import SideBarMenu from "./SideBarMenu.jsx"
@@ -23,6 +25,8 @@ const SellItemPage = () => {
             }
             <p>This is the page where stuff is sold</p> 
             <Link to="/">Home</Link>
+            <ImageLoader />
+            <FooterPage />
         </div>
     );
 }
