@@ -9,20 +9,6 @@ const SellItemForm = (props) => {
     const [askingPrice, setAskingPrice] = useState()
     const [itemDetails, setItemDetails] = useState("")
 
-   const submitForm = () => {
-
-        const newItem = {
-            itemImage : 'pic1',
-            username: "Daniel L Lackey",
-            itemDescription: itemDescription,
-            askingPrice: askingPrice,
-            itemDetails: itemDetails
-        }
-
-        console.log(newItem)
-
-   }
-
     return (
         <form>
             <label>
@@ -53,7 +39,7 @@ const SellItemForm = (props) => {
         />
         <ImageLoader />
             <div>
-                <Button onClick={submitForm}>Submit</Button>
+                <Button >Submit</Button>
             </div>
         </form>
     )
