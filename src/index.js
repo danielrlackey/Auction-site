@@ -4,14 +4,14 @@ import * as serviceWorker from './serviceWorker';
 import AppRouter from "./routes/approuter.js"
 
 // redux related imports
-import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
+import store from "./store/store.jsx";
 
-const store = createStore(() => [], {}, applyMiddleware());
+
 
 
 const jsx = (
-    <Provider store={store}>
+    <Provider store={store()}>
         <AppRouter/>
     </Provider>
 )

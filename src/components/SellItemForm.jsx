@@ -1,13 +1,19 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import {bindActionCreators} from "redux";
 import ImageLoader from "./ImageUploader.jsx";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-
+import {postItem
+} from "../actions";
 const SellItemForm = (props) => {
 
     const [itemDescription, setItemDescription] = useState("")
     const [askingPrice, setAskingPrice] = useState()
     const [itemDetails, setItemDetails] = useState("")
+
+
+
 
     return (
         <form>
@@ -27,22 +33,31 @@ const SellItemForm = (props) => {
                 onChange={(e) => setAskingPrice(e.target.value)}
                 placeholder="Asking price" 
             />
-        <TextField
-          id="outlined-multiline-static"
-          label="Multiline"
-          multiline
-          rows={4}
-          defaultValue="Default Value"
-          variant="outlined"
-          value={itemDetails}
-          onChange={(e) => setItemDetails(e.target.value)}
-        />
-        <ImageLoader />
+            <TextField
+            id="outlined-multiline-static"
+            label="Multiline"
+            multiline
+            rows={4}
+            defaultValue="Default Value"
+            variant="outlined"
+            value={itemDetails}
+            onChange={(e) => setItemDetails(e.target.value)}
+            />
+            <ImageLoader />
             <div>
                 <Button >Submit</Button>
             </div>
         </form>
     )
-}
+};
 
-export default SellItemForm;
+
+function mapStateToProps({}) {
+    return { }
+}
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({
+        postItem
+    }, dispatch);
+}
+export default connect(mapStateToProps, mapDispatchToProps)(SellItemForm)
