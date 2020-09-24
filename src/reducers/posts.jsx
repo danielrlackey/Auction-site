@@ -4,16 +4,19 @@ const ItemReducerDefaultState = {
 };
 
 const ItemReducer = (state = ItemReducerDefaultState, action) => {
+
     switch (action.type) {
         case POST_ITEM:
             return {
                 ...state,
-                userPosts: action.payload
+                userPosts:[
+                    ...state.userPosts,
+                    action.payload
+                ]
             };
             default:
                 return state
-        
-        
+    
     }
 }
 
