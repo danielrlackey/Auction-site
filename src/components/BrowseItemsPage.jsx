@@ -1,29 +1,34 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 import FooterPage from "./FooterPage.jsx";
+import ItemDisplayCard from "./ItemDisplayCard.jsx";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar.jsx";
-import { connect } from "react-redux";
+
 import SideBarMenu from "./SideBarMenu";
 
 const BrowseItemsPage = (props) => {
     const  {posts} = props
 
+
     const [sideBarMenuOpen, setSideBarMenuOpen] = useState(false)
     console.log(posts)
+
+
     return (
         <div>
             <Navbar
-                    setSideBarMenuOpen={setSideBarMenuOpen}
-                />
+                setSideBarMenuOpen={setSideBarMenuOpen}
+            />
                 {sideBarMenuOpen &&
-                <SideBarMenu
-                    sideBarMenuOpen={sideBarMenuOpen}
-                    setSideBarMenuOpen={setSideBarMenuOpen}
-                    sell={<Link className to="sell-items">Sell </Link>}
-                    facts={<Link to="facts">Facts </Link>}
-                    rankings={<Link to="rankings">Rankings </Link>}
-                />
-                }
+            <SideBarMenu
+                sideBarMenuOpen={sideBarMenuOpen}
+                setSideBarMenuOpen={setSideBarMenuOpen}
+                sell={<Link className to="sell-items">Sell </Link>}
+                facts={<Link to="facts">Facts </Link>}
+                rankings={<Link to="rankings">Rankings </Link>}
+            />
+            }
             <p>this the the page where you can broswe items and chose items to buy</p>
              {posts.userPosts&& posts.userPosts.map((post)=>{
                 return(
@@ -35,6 +40,7 @@ const BrowseItemsPage = (props) => {
                 )
                 
             })}
+            <ItemDisplayCard />
             <Link to="/">Home</Link>
             <div>
                 <FooterPage />
