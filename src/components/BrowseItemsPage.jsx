@@ -4,15 +4,15 @@ import FooterPage from "./FooterPage.jsx";
 import ItemDisplayCard from "./ItemDisplayCard.jsx";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar.jsx";
-
 import SideBarMenu from "./SideBarMenu";
+
 
 const BrowseItemsPage = (props) => {
     const  {posts} = props
-
+    
 
     const [sideBarMenuOpen, setSideBarMenuOpen] = useState(false)
-    console.log(posts)
+   
 
 
     return (
@@ -32,15 +32,14 @@ const BrowseItemsPage = (props) => {
             <p>this the the page where you can broswe items and chose items to buy</p>
              {posts.userPosts&& posts.userPosts.map((post)=>{
                 return(
-                    <div style={{border: "1px solid black"}}>
-                         <p>{post.itemDescription}</p>
-                         <p>{post.askingPrice}</p>
-                         <p>{post.itemDetails}</p>
-                    </div>    
+                    <ItemDisplayCard 
+                    itemDescription={post.itemDescription}
+                    askingPrice={post.askingPrice}
+                    itemDetails={post.itemDetails}
+                />
                 )
                 
             })}
-            <ItemDisplayCard />
             <Link to="/">Home</Link>
             <div>
                 <FooterPage />

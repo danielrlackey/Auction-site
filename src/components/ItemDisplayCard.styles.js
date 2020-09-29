@@ -1,4 +1,4 @@
-import { red } from '@material-ui/core/colors';
+import { blue } from '@material-ui/core/colors';
 
 export const styles = theme => ({
 
@@ -20,6 +20,6 @@ export const styles = theme => ({
         transform: 'rotate(180deg)',
       },
       avatar: {
-        backgroundColor: red[500],
+        backgroundColor: blue[500],
       },
 });
