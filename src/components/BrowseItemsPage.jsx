@@ -11,6 +11,7 @@ const BrowseItemsPage = (props) => {
     const  {posts} = props
     
 
+
     const [sideBarMenuOpen, setSideBarMenuOpen] = useState(false)
    
 
@@ -40,6 +41,7 @@ const BrowseItemsPage = (props) => {
                 )
                 
             })}
+            <ItemDisplayCard />
             <Link to="/">Home</Link>
             <div>
                 <FooterPage />
