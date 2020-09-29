@@ -10,7 +10,7 @@ import SideBarMenu from "./SideBarMenu";
 const BrowseItemsPage = (props) => {
     const  {posts} = props
     
-
+    console.log(posts);
 
     const [sideBarMenuOpen, setSideBarMenuOpen] = useState(false)
    
