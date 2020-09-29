@@ -6,14 +6,15 @@ import { Link } from "react-router-dom";
 import Navbar from "./Navbar.jsx";
 import SideBarMenu from "./SideBarMenu";
 
-
+// some notes
 const BrowseItemsPage = (props) => {
     const  {posts} = props
     
     console.log(posts);
 
     const [sideBarMenuOpen, setSideBarMenuOpen] = useState(false)
-   
+    
+    console.log('big ole test')
 
 
     return (
