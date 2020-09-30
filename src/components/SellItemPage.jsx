@@ -19,8 +19,7 @@ const SellItemPage = () => {
                 sideBarMenuOpen={sideBarMenuOpen}
                 setSideBarMenuOpen={setSideBarMenuOpen}
                 sell={<Link className to="sell-items">Sell </Link>}
-                facts={<Link to="facts">Facts </Link>}
-                rankings={<Link to="rankings">Rankings </Link>}
+                rankings={<Link to="news&rankings">News & Rankings </Link>}
             />
             }
             <p>This is the page where stuff is sold</p> 

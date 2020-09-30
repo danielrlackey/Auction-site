@@ -1,34 +1,27 @@
-import React, { useState } from "react";
-import FooterPage from "./FooterPage.jsx";
-import { Link } from "react-router-dom";
-import Navbar from "./Navbar.jsx";
-import SideBarMenu from "./SideBarMenu";
+import React from "react";
+import { connect } from "react-redux";
+import {fighterRankingsData} from "../actions/getdata.jsx";
 
-const FighterRankings = () => {
+const FighterRankings = (props) => {
 
-    const [sideBarMenuOpen, setSideBarMenuOpen] = useState(false)
+const {rankings} = props
 
-    return (
+    return(
         <div>
-            <Navbar
-                setSideBarMenuOpen={setSideBarMenuOpen}
-            />
-            {sideBarMenuOpen &&
-            <SideBarMenu
-                sideBarMenuOpen={sideBarMenuOpen}
-                setSideBarMenuOpen={setSideBarMenuOpen}
-                sell={<Link className to="sell-items">Sell </Link>}
-                facts={<Link to="facts">Facts </Link>}
-                rankings={<Link to="rankings">Rankings </Link>}
-            />
-            }
-            <p>get the current rankings on fighters in boxing and mma</p>
-            <Link to="/">Home</Link>
-            <div>
-                <FooterPage />
-            </div>
+            <button onClick={()=>fighterRankingsData()}>api</button>
+           {console.log(rankings && rankings.data)}
         </div>
     )
-};
+}
 
-export default FighterRankings;
+const mapStateToProps = ({rankings}) => {
+    return { rankings }
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    fighterRankingsData: (data) => dispatch(fighterRankingsData(data))
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(FighterRankings);
+

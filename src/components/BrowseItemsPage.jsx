@@ -27,8 +27,7 @@ const BrowseItemsPage = (props) => {
                 sideBarMenuOpen={sideBarMenuOpen}
                 setSideBarMenuOpen={setSideBarMenuOpen}
                 sell={<Link className to="sell-items">Sell </Link>}
-                facts={<Link to="facts">Facts </Link>}
-                rankings={<Link to="rankings">Rankings </Link>}
+                rankings={<Link to="news&rankings">News & Rankings </Link>}
             />
             }
             <p>this the the page where you can broswe items and chose items to buy</p>

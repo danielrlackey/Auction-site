@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import FighterRankings from "./FighterRankings.jsx";
 import FooterPage from "./FooterPage.jsx";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar.jsx";
-import SideBarMenu from "./SideBarMenu.jsx";
+import SideBarMenu from "./SideBarMenu";
 
-const FighterFacts = (props) => {
+const NewsAndRankings = () => {
 
     const [sideBarMenuOpen, setSideBarMenuOpen] = useState(false)
 
@@ -18,12 +19,12 @@ const FighterFacts = (props) => {
                 sideBarMenuOpen={sideBarMenuOpen}
                 setSideBarMenuOpen={setSideBarMenuOpen}
                 sell={<Link className to="sell-items">Sell </Link>}
-                facts={<Link to="facts">Facts </Link>}
-                rankings={<Link to="rankings">Rankings </Link>}
+                rankings={<Link to="news&rankings">News & Rankings </Link>}
             />
-                }
-            <p>A page where you can get facts on fighters</p>
+            }
+            <p>get the current rankings on fighters in boxing and mma</p>
             <Link to="/">Home</Link>
+            <FighterRankings />
             <div>
                 <FooterPage />
             </div>
@@ -31,4 +32,4 @@ const FighterFacts = (props) => {
     )
 };
 
-export default FighterFacts;
+export default NewsAndRankings;

@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 
 // reducers
 import ItemReducer from "../reducers/posts.jsx";
+import FighterRankingsReducer from "../reducers/getdata.jsx";
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -10,7 +11,9 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 export default () => {
     const store = createStore(
         combineReducers({
-            posts: ItemReducer
+            rankings: FighterRankingsReducer,
+            posts: ItemReducer,
+
         }),
         composeEnhancers(applyMiddleware(thunk))
     );
