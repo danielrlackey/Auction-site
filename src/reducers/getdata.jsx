@@ -5,16 +5,16 @@ const initialState = {
     error: ""
 };
 
+
 const FighterRankingsReducer = (state = initialState, action) => {
-         console.log(action)
         switch(action.type) {
             case GET_DATA_REQUEST:
-                console.log("hellooo")
-                console.log('from the reducer')
-                console.log(action.payload)
             return {
                 ...state,
-                data: [],
+                data: [
+                    ...state.data,
+                    action.payload
+                ],
                 error: ""
                 }
             case GET_DATA_SUCCESS:

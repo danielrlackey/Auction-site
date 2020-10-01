@@ -1,22 +1,16 @@
-import { createStore, combineReducers, applyMiddleware, compose } from "redux";
-import thunk from "redux-thunk";
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import promiseMiddleware from 'redux-promise';
 
 // reducers
 import ItemReducer from "../reducers/posts.jsx";
 import FighterRankingsReducer from "../reducers/getdata.jsx";
 
-
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
 export default () => {
-    const store = createStore(
-        combineReducers({
+    const rootReducer = combineReducers({
             rankings: FighterRankingsReducer,
             posts: ItemReducer,
-
-        }),
-        composeEnhancers(applyMiddleware(thunk))
-    );
+    });
+    const store = createStore(rootReducer, applyMiddleware(promiseMiddleware));
 
     return store;
 };

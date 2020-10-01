@@ -4,12 +4,13 @@ import {fighterRankingsData} from "../actions/getdata.jsx";
 
 const FighterRankings = (props) => {
 
-const {rankings} = props
-
+const {rankings, fighterRankingsData} = props
+    console.log(rankings)
     return(
         <div>
             <button onClick={()=>fighterRankingsData()}>api</button>
-           {console.log(rankings && rankings.data)}
+           {
+           }
         </div>
     )
 }

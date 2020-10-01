@@ -7,18 +7,17 @@ import { GET_DATA_REQUEST } from "../types";
 
 export const fighterRankingsData = () => {
     console.log('from the action')
-  const  url = 'https://jsonplaceholder.typicode.com/todos/1';
+  const url = 'https://jsonplaceholder.typicode.com/todos/1';
    return{
        type: GET_DATA_REQUEST,
-       payload: "testn"
-    //    payload: axios.get(url)
-//     .then((res)=>{
-//         return res.data
-//     })
-//     .catch((err=>{
-//         console.log(err,'uhoh something went wrong :(')
-//     }))
-//    }
+       payload: axios.get(url)
+    .then((res)=>{
+
+        return res.data
+    })
+    .catch((err=>{
+        console.log(err,'uhoh something went wrong :(')
+    }))
    }
 };
 
