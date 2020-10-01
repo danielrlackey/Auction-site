@@ -14,7 +14,6 @@ const BrowseItemsPage = (props) => {
 
     const [sideBarMenuOpen, setSideBarMenuOpen] = useState(false)
     
-    console.log('big ole test')
 
 
     return (
@@ -37,6 +36,7 @@ const BrowseItemsPage = (props) => {
                     itemDescription={post.itemDescription}
                     askingPrice={post.askingPrice}
                     itemDetails={post.itemDetails}
+                    pictures={post.pictures}
                 />
                 )
                 

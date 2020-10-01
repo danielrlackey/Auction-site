@@ -9,7 +9,6 @@ const SideBarMenu = (props) => {
 
   const {setSideBarMenuOpen,
          sell,
-         facts,
          rankings,
          classes,
          sideBarMenuOpen
@@ -22,7 +21,6 @@ const SideBarMenu = (props) => {
         onClose={()=>setSideBarMenuOpen(false)
     }>
       {sell}
-      {facts}
       {rankings}
       <p>Buy Sell or Browse</p>
     </Drawer>

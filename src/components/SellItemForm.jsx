@@ -17,21 +17,24 @@ const SellItemForm = (props) => {
     const [itemDescription, setItemDescription] = useState("")
     const [askingPrice, setAskingPrice] = useState()
     const [itemDetails, setItemDetails] = useState("")
+    const [pictures, setPictures] = useState([])
     // modal hook below
     const [modalOpen, setModalOpen] = useState(false)
     
 
     const postItemForSale = () => {
-       if (itemDescription !== "" && askingPrice !== "" && itemDetails !== "") {
+       if (itemDescription !== "" && askingPrice !== "" && itemDetails !== "" && pictures !== []) {
         const item = {
             itemDescription: itemDescription,
             askingPrice: askingPrice,
-            itemDetails: itemDetails
+            itemDetails: itemDetails,
+            pictures: pictures
         }
         props.postItem(item);
         setItemDescription("")
         setAskingPrice("")
         setItemDetails("")
+        setPictures([])
        }else {
            setModalOpen(true)
        };
@@ -67,7 +70,10 @@ const SellItemForm = (props) => {
             value={itemDetails}
             onChange={(e) => setItemDetails(e.target.value)}
             />
-            <ImageLoader />
+            <ImageLoader
+            value={pictures}
+            onchange={(e) => setPictures(e.target.file)}
+            />
             <div>
                 <Button onClick={postItemForSale}>Submit</Button>
             </div>
