@@ -6,11 +6,10 @@ import { GET_DATA_REQUEST } from "../types";
 
 
 export const fighterRankingsData = () => {
-    console.log('from the action')
-  const url = 'https://jsonplaceholder.typicode.com/todos/1';
+  const baseUrl = "http://localhost:5000"
    return{
        type: GET_DATA_REQUEST,
-       payload: axios.get(url)
+       payload: axios.get(baseUrl + "/rankings")
     .then((res)=>{
 
         return res.data

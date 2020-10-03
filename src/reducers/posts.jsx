@@ -1,4 +1,4 @@
-import {POST_ITEM} from "../types"
+import {GET_ITEMS} from "../types"
 const ItemReducerDefaultState = {
     userPosts: []
 };
@@ -6,12 +6,13 @@ const ItemReducerDefaultState = {
 const ItemReducer = (state = ItemReducerDefaultState, action) => {
 
     switch (action.type) {
-        case POST_ITEM:
+        case GET_ITEMS:
+            console.log(action.payload)
             return {
                 ...state,
                 userPosts:[
                     ...state.userPosts,
-                    action.payload
+                    ...action.payload
                 ]
             };
             default:

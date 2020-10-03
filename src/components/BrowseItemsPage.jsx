@@ -1,22 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import FooterPage from "./FooterPage.jsx";
 import ItemDisplayCard from "./ItemDisplayCard.jsx";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar.jsx";
 import SideBarMenu from "./SideBarMenu";
+import { getItems } from "../actions/posts.jsx";
 
 // some notes
 const BrowseItemsPage = (props) => {
-    const  {posts} = props
-    
-    console.log(posts);
 
+    const  {posts, getItems} = props
     const [sideBarMenuOpen, setSideBarMenuOpen] = useState(false)
-    
 
+    useEffect(()=>{
+        getItems()
+    },[])
 
     return (
+
         <div>
             <Navbar
                 setSideBarMenuOpen={setSideBarMenuOpen}
@@ -30,18 +32,17 @@ const BrowseItemsPage = (props) => {
             />
             }
             <p>this the the page where you can broswe items and chose items to buy</p>
-             {posts.userPosts&& posts.userPosts.map((post)=>{
+             {posts && posts.userPosts && posts.userPosts.map((post)=>{
                 return(
                     <ItemDisplayCard 
-                    itemDescription={post.itemDescription}
-                    askingPrice={post.askingPrice}
-                    itemDetails={post.itemDetails}
-                    pictures={post.pictures}
+                    itemDescription={post && post.itemDescription}
+                    askingPrice={post && post.askingPrice}
+                    itemDetails={post && post.itemDetails}
+                    pictures={post && post.pictures}
                 />
                 )
                 
             })}
-            <ItemDisplayCard />
             <Link to="/">Home</Link>
             <div>
                 <FooterPage />
@@ -50,8 +51,13 @@ const BrowseItemsPage = (props) => {
     )
 };
 
+
+const mapDispatchToProps = (dispatch) => ({
+    getItems: () => dispatch(getItems())
+});
+
 function mapStateToProps({posts}) {
     return {posts}
 }
 
-export default connect(mapStateToProps)(BrowseItemsPage)
+export default connect(mapStateToProps,mapDispatchToProps)(BrowseItemsPage)

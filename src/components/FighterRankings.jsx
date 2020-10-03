@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import {fighterRankingsData} from "../actions/getdata.jsx";
 
@@ -6,11 +6,19 @@ const FighterRankings = (props) => {
 
 const {rankings, fighterRankingsData} = props
     console.log(rankings)
+
+    useEffect(()=>{
+        fighterRankingsData()
+    },[])
+
     return(
         <div>
-            <button onClick={()=>fighterRankingsData()}>api</button>
-           {
-           }
+            <h1>P4P standings</h1>
+            {rankings && rankings.data.map((ranking) => {
+                return (
+                    ranking && ranking.data
+                )
+            })}
         </div>
     )
 }

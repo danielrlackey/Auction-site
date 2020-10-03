@@ -17,7 +17,7 @@ const SellItemForm = (props) => {
     const [itemDescription, setItemDescription] = useState("")
     const [askingPrice, setAskingPrice] = useState()
     const [itemDetails, setItemDetails] = useState("")
-    const [pictures, setPictures] = useState([])
+    const [pictures, setPictures] = useState()
     // modal hook below
     const [modalOpen, setModalOpen] = useState(false)
     
@@ -34,7 +34,7 @@ const SellItemForm = (props) => {
         setItemDescription("")
         setAskingPrice("")
         setItemDetails("")
-        setPictures([])
+        setPictures()
        }else {
            setModalOpen(true)
        };
