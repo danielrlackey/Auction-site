@@ -7,11 +7,12 @@ import { GET_DATA_REQUEST } from "../types";
 
 export const fighterRankingsData = () => {
   const baseUrl = "http://localhost:5000"
+  console.log("firing")
    return{
        type: GET_DATA_REQUEST,
        payload: axios.get(baseUrl + "/rankings")
     .then((res)=>{
-
+        console.log(res.data)
         return res.data
     })
     .catch((err=>{

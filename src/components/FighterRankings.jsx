@@ -1,24 +1,29 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import {fighterRankingsData} from "../actions/getdata.jsx";
+import RankingTable from "./RankingTable.jsx"
 
 const FighterRankings = (props) => {
 
 const {rankings, fighterRankingsData} = props
-    console.log(rankings)
+    
 
     useEffect(()=>{
+        console.log(rankings)
         fighterRankingsData()
     },[])
 
     return(
         <div>
             <h1>P4P standings</h1>
-            {rankings && rankings.data.map((ranking) => {
+            {/* {rankings && rankings.data && rankings.data && rankings.data.map((ranking) => {
                 return (
-                    ranking && ranking.data
+                    
                 )
-            })}
+            })} */}
+            <RankingTable
+                rankings={rankings}     
+            />
         </div>
     )
 }

@@ -13,7 +13,7 @@ const FighterRankingsReducer = (state = initialState, action) => {
                 ...state,
                 data: [
                     ...state.data,
-                    action.payload
+                    ...action.payload.fighters
                 ],
                 error: ""
                 }
