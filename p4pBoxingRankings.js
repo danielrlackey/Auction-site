@@ -1,4 +1,4 @@
-const p4pRankings = {
+const p4pBoxingRankings = {
     fighters:[
         {
             name: "Saul Alvarez",
@@ -11,7 +11,6 @@ const p4pRankings = {
             stance: "orthodox",
             height: "5'8",
             reach: 70.5,
-            image: "https://boxrec.com/media/images//thumb/7/74/Santos_Saul_Alvarez_Barragan1.jpg/200px-Santos_Saul_Alvarez_Barragan1.jpg"
         },
         {
             name: "Tyson Luke Fury",
@@ -129,4 +128,4 @@ const p4pRankings = {
 
 
     
-  module.exports = p4pRankings;
+  module.exports = p4pBoxingRankings;

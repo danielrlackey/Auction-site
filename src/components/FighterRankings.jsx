@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import {fighterRankingsData} from "../actions/getdata.jsx";
-import RankingTable from "./RankingTable.jsx"
+import BoxingRankingTable from "./BoxingRankingTable.jsx"
 
 const FighterRankings = (props) => {
 
@@ -16,12 +16,7 @@ const {rankings, fighterRankingsData} = props
     return(
         <div>
             <h1>P4P standings</h1>
-            {/* {rankings && rankings.data && rankings.data && rankings.data.map((ranking) => {
-                return (
-                    
-                )
-            })} */}
-            <RankingTable
+            <BoxingRankingTable
                 rankings={rankings}     
             />
         </div>

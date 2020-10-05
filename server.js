@@ -1,7 +1,8 @@
 // all imports below
 const express = require("express");
 const mongoose = require('mongoose');
-const p4pRankings = require("./p4pRankings")
+const p4pBoxingRankings = require("./p4pBoxingRankings")
+const divisionalRankings = require("./divisionalRankings.js")
 
 let bodyParser = require('body-parser');
 const app = express();
@@ -38,8 +39,11 @@ app.get("/items", function(req, res){
   })
 
 
-app.get("/rankings", function(req, res){
-    res.send(p4pRankings)
+app.get("/rankings", async(req, res) => {
+    res.send(p4pBoxingRankings);
+    res.send(divisionalRankings);
+    
+    
 })
 
 app.post("/items", function(req, res){
@@ -55,7 +59,7 @@ app.post("/items", function(req, res){
 
 
 app.delete("/items", function(req, res){
-    //Delete all the items in the fucking database
+    //Delete all the items in the database
 })
 
 

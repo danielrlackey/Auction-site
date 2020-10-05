@@ -9,28 +9,13 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-// const useStyles = makeStyles({
-//   table: {
-//     minWidth: 650,
-//   },
-// });
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
 
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
 
-const RankingTable = (props) => {
-  const classes = styles();
-
-  const {rankings} = props;
+const BoxingRankingTable = (props) => {
+  
+    const classes = styles();
+    const {rankings} = props;
 
   return (
     <TableContainer component={Paper}>
@@ -54,7 +39,6 @@ const RankingTable = (props) => {
             <TableRow key={ranking.name}>
               <TableCell component="th" scope="row">
                 {ranking.name}
-                <img styles={{height: "50px !important"}} src={ranking.image}></img>
               </TableCell>
               <TableCell align="right">{ranking.record}</TableCell>
               <TableCell align="right">{ranking.kos}</TableCell>
@@ -73,4 +57,4 @@ const RankingTable = (props) => {
   );
 }
 
-export default (withStyles(styles, {withTheme: false})(RankingTable))
+export default (withStyles(styles, {withTheme: false})(BoxingRankingTable))
