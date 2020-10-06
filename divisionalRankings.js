@@ -1,5 +1,5 @@
 const divisionalRankings = {
-    fighters: [
+    champsByDivision: [
         {
             division: "Heavyweight",
             name: "Tyson Fury",
