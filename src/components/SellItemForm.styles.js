@@ -2,13 +2,25 @@
 export const styles = theme => ({
 
 paper: {
-    position: 'absolute',
-    width: 400,
-    backgroundColor: "white",
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+   display: "flex",
+   flexDirection: "column",
+   marginTop: "40px",
+   marginBottom: "20px",
+   marginRight: "10px",
+   marginLeft: "10px",
   },
+  inputArea: {
+    marginTop: "5px",
+    backgroundColor: "white",
+    border: "none"
+  },
+  btn: {
+    display: "flex",
+    justifyContent: "center",
+    marginTop: "10px",
+    color: "#39393b"
+    
+  }
 
 });
 

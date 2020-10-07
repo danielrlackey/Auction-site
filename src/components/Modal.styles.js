@@ -1,11 +1,15 @@
 export const styles = theme => ({
 
     simpleModal: {
-        position: 'absolute',
+        position: 'relative',
         width: 400,
-        backgroundColor: theme.palette.background.paper,
-        border: '2px solid #000',
-        boxShadow: theme.shadows[5],
+        backgroundColor: "white",
+        border: 'none',
         padding: theme.spacing(2, 4, 3),
+        marginLeft: "30vw",
+        marginTop: "18vw"
       },
+    text: {
+      textAlign: "center",
+    },
 });

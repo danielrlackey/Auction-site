@@ -14,6 +14,9 @@ import { withStyles } from '@material-ui/core/styles';
 
 const SellItemForm = (props) => {
 
+
+    const {classes} = props
+
     const [itemDescription, setItemDescription] = useState("")
     const [askingPrice, setAskingPrice] = useState()
     const [itemDetails, setItemDetails] = useState("")
@@ -43,48 +46,46 @@ const SellItemForm = (props) => {
 
     return (
         <div>
-            <form>
-            <label>
-                Item Description:
+            <form className={classes.paper}>
                 <input 
                     type="text"
+                    className={classes.inputArea}
                     value={itemDescription} 
                     onChange={(e) => setItemDescription(e.target.value)}
                     placeholder="Item description" 
                 />
-            </label>
-            
-            <input 
-                input="text"
-                value={askingPrice}
-                onChange={(e) => setAskingPrice(e.target.value)}
-                placeholder="Asking price" 
-            />
-            <TextField
-            id="outlined-multiline-static"
-            label="Multiline"
-            multiline
-            rows={4}
-            defaultValue="Default Value"
-            variant="outlined"
-            value={itemDetails}
-            onChange={(e) => setItemDetails(e.target.value)}
-            />
-            <ImageLoader
-            value={pictures}
-            onchange={(e) => setPictures(e.target.file)}
-            />
-            <div>
+                <input 
+                    input="text"
+                    className={classes.inputArea}
+                    value={askingPrice}
+                    onChange={(e) => setAskingPrice(e.target.value)}
+                    placeholder="Asking price" 
+                />
+                <TextField
+                    className={classes.inputArea}
+                    placeholder="Item details... "
+                    multiline
+                    rows={4}
+                    defaultValue="Default Value"
+                    variant="outlined"
+                    value={itemDetails}
+                    onChange={(e) => setItemDetails(e.target.value)}
+                />
+                <ImageLoader
+                    className={classes.inputArea}
+                    value={pictures}
+                    onchange={(e) => setPictures(e.target.file)}
+                />
+            <div className={classes.btn}>
                 <Button onClick={postItemForSale}>Submit</Button>
             </div>
-        </form>
-        <SimpleModal
-            modalOpen={modalOpen}
-            setModalOpen={setModalOpen}
+            </form>
+                <SimpleModal
+                    modalOpen={modalOpen}
+                    setModalOpen={setModalOpen}
             >
-        </SimpleModal>
-        </div>
-        
+                </SimpleModal>
+        </div>  
     )
 };
 

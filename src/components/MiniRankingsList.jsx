@@ -1,12 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+// styling imports
+import { withStyles } from '@material-ui/core/styles';
+import {styles} from "./MiniRankingsList.styles.js";
 
 const MiniRankingsList = (props) => {
    
-    const {rankings, title} = props
+    const {rankings, classes, title} = props
     console.log(rankings, "hello")
     return(
         <div>
-            <h1>{title}</h1>
+            <Link 
+            to="rankings"
+            className={classes.link}
+            >    
+            <h1>{title}</h1>                
+            </Link>
             {rankings && rankings.map((ranking) => {
                 return(
                     <ul>
@@ -23,4 +33,4 @@ const MiniRankingsList = (props) => {
     )
 }
 
-export default MiniRankingsList;
+export default (withStyles(styles, {withTheme: true})(MiniRankingsList));

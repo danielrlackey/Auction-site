@@ -1,6 +1,7 @@
-export const styles = makeStyles((theme) => ({
+export const styles = theme => ({
     root: {
       flexGrow: 1,
+      
     },
     menuButton: {
       marginRight: theme.spacing(2),
@@ -12,4 +13,7 @@ export const styles = makeStyles((theme) => ({
       textDecoration: "none",
       color: "white"
     },
-  }));
+    btnColor: {
+      color: "white"
+    },
+  });

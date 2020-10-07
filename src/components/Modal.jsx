@@ -16,9 +16,9 @@ const SimpleModal = (props) => {
 
   const body = (
     <div className={classes.simpleModal}>
-      <h2 id="simple-modal-title">Text in a modal</h2>
-      <p id="simple-modal-description">
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+      <h2 className={classes.text} >Alert!</h2>
+      <p className={classes.text}>
+        Please fill out all fields to proceed
       </p>
     </div>
   );

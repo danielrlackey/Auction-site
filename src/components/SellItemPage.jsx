@@ -1,33 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 import FooterPage from "./FooterPage.jsx";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar.jsx";
 import SellItemForm from "./SellItemForm.jsx";
-import SideBarMenu from "./SideBarMenu.jsx";
 
-const SellItemPage = () => {
+// styling imports
+import { withStyles } from '@material-ui/core/styles';
+import {styles} from "./SellItemPage.styles.js"
 
-    const [sideBarMenuOpen, setSideBarMenuOpen] = useState(false)
+const SellItemPage = (props) => {
+
+    const { classes } = props
 
     return (
-        <div>
-            <Navbar
-                setSideBarMenuOpen={setSideBarMenuOpen}
-            />
-            {sideBarMenuOpen &&
-            <SideBarMenu
-                sideBarMenuOpen={sideBarMenuOpen}
-                setSideBarMenuOpen={setSideBarMenuOpen}
-                sell={<Link className to="sell-items">Sell </Link>}
-                rankings={<Link to="news&rankings">News & Rankings </Link>}
-            />
-            }
+        <div className={classes.background}>
+            <Navbar />
             <p>This is the page where stuff is sold</p> 
-            <Link to="/">Home</Link>
+            <Link 
+                to="/"
+                className={classes.link}
+            >
+            Home
+            </Link>
             <SellItemForm />
             <FooterPage />
         </div>
     );
 }
 
-export default SellItemPage;
+export default (withStyles(styles, {withTheme: false})(SellItemPage));
