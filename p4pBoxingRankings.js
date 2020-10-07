@@ -1,5 +1,5 @@
 const p4pBoxingRankings = {
-    fighters:[
+    p4pFighters:[
         {
             name: "Saul Alvarez",
             record: "53-1-0",

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_DATA_REQUEST } from "../types";
+import { GET_DATA_REQUEST, GET_DIVISIONAL_DATA } from "../types";
 
 // GET_DATA_SUCCESS, GET_DATA_ERROR
 
@@ -7,10 +7,10 @@ import { GET_DATA_REQUEST } from "../types";
 
 export const fighterRankingsData = () => {
   const baseUrl = "http://localhost:5000"
-  console.log("firing")
+
    return{
        type: GET_DATA_REQUEST,
-       payload: axios.get(baseUrl + "/rankings")
+       payload: axios.get(baseUrl + "/rankings" )
     .then((res)=>{
         console.log(res.data)
         return res.data
@@ -21,3 +21,18 @@ export const fighterRankingsData = () => {
    }
 };
 
+
+export const fighterDivisionalRankingsData = () => {
+    const baseUrl = "http://localhost:5000"
+     return{
+         type: GET_DIVISIONAL_DATA,
+         payload: axios.get(baseUrl + "/rankings/divisions" )
+      .then((res)=>{
+          console.log(res.data)
+          return res.data
+      })
+      .catch((err=>{
+          console.log(err,'uhoh something went wrong :(')
+      }))
+     }
+  };

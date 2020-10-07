@@ -40,10 +40,11 @@ app.get("/items", function(req, res){
 
 
 app.get("/rankings", async(req, res) => {
-    res.send(p4pBoxingRankings);
+    res.send(p4pBoxingRankings);    
+})
+
+app.get("/rankings/divisions", async(req, res) => {
     res.send(divisionalRankings);
-    
-    
 })
 
 app.post("/items", function(req, res){

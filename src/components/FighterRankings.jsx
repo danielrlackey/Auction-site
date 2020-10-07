@@ -1,24 +1,37 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import {fighterRankingsData} from "../actions/getdata.jsx";
+import {fighterRankingsData, fighterDivisionalRankingsData} from "../actions/getdata.jsx";
 import BoxingRankingTable from "./BoxingRankingTable.jsx"
 
 const FighterRankings = (props) => {
 
-const {rankings, fighterRankingsData} = props
-    
+const {rankings} = props
+   
 
     useEffect(()=>{
-        console.log(rankings)
-        fighterRankingsData()
+        props.fighterDivisionalRankingsData()
+        props.fighterRankingsData()
     },[])
 
+    console.log(rankings)
+    let p4p = [];
+    rankings.data.forEach((ranking)=>{
+        if(!ranking.division){
+            p4p.push(ranking)
+            console.log(p4p, 'oi')
+        }
+    })
+
+    console.log(p4p, "cuck")
     return(
         <div>
             <h1>P4P standings</h1>
-            <BoxingRankingTable
-                rankings={rankings}     
-            />
+            {/* {rankings.data &&
+                  <BoxingRankingTable
+                  rankings={rankings}     
+              />
+            } */}
+ 
         </div>
     )
 }
@@ -28,7 +41,8 @@ const mapStateToProps = ({rankings}) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    fighterRankingsData: (data) => dispatch(fighterRankingsData(data))
+    fighterRankingsData: (data) => dispatch(fighterRankingsData(data)),
+    fighterDivisionalRankingsData: (data) => dispatch(fighterDivisionalRankingsData(data)),
 });
 
 

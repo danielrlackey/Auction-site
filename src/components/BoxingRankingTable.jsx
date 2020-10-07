@@ -16,7 +16,11 @@ const BoxingRankingTable = (props) => {
   
     const classes = styles();
     const {rankings} = props;
-
+   
+    // rankings.data[0].map((division)=>{
+    //   console.log(division.name)
+    // })
+    console.log(rankings.data[0])
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
@@ -35,20 +39,22 @@ const BoxingRankingTable = (props) => {
           </TableRow>
         </TableHead>
         <TableBody>
+
+
           {rankings.data && rankings.data.map((ranking) => (
             <TableRow key={ranking.name}>
               <TableCell component="th" scope="row">
                 {ranking.name}
               </TableCell>
-              <TableCell align="right">{ranking.record}</TableCell>
-              <TableCell align="right">{ranking.kos}</TableCell>
-              <TableCell align="right">{ranking.alias}</TableCell>
-              <TableCell align="right">{ranking.nationality}</TableCell>
-              <TableCell align="right">{ranking.debut}</TableCell>
-              <TableCell align="right">{ranking.division}</TableCell>
-              <TableCell align="right">{ranking.stance}</TableCell>
-              <TableCell align="right">{ranking.height}</TableCell>
-              <TableCell align="right">{ranking.reach}</TableCell>
+              {/* <TableCell align="right">{ranking.data[1].record}</TableCell>
+              <TableCell align="right">{ranking.data[1].kos}</TableCell>
+              <TableCell align="right">{ranking.data[1].alias}</TableCell>
+              <TableCell align="right">{ranking.data[1].nationality}</TableCell>
+              <TableCell align="right">{ranking.data[1].debut}</TableCell>
+              <TableCell align="right">{ranking.data[1].division}</TableCell>
+              <TableCell align="right">{ranking.data[1].stance}</TableCell>
+              <TableCell align="right">{ranking.data[1].height}</TableCell>
+              <TableCell align="right">{ranking.data[1].reach}</TableCell> */}
             </TableRow>
           ))}
         </TableBody>
