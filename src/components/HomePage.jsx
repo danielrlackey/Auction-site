@@ -6,8 +6,13 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar.jsx"
 import SideBarMenu from "./SideBarMenu.jsx";
 import {connect} from "react-redux";
-import MiniRankingsList from "../MiniRankingsList";
+import MiniRankingsList from "./MiniRankingsList";
+import Grid from '@material-ui/core/Grid';
 import {fighterRankingsData, fighterDivisionalRankingsData} from "../actions/getdata.jsx";
+
+// styling imports
+import { withStyles } from '@material-ui/core/styles';
+import {styles} from "./HomePage.styles.js";
 
 // import HomePageImageDisplay from ".components/HomePageImageDisplay.jsx";
 
@@ -15,7 +20,7 @@ import {fighterRankingsData, fighterDivisionalRankingsData} from "../actions/get
 
 const HomePage = (props) => {
 
-    const {rankings} = props
+    const {rankings, classes} = props
     console.log(rankings,"from home page")
 
     useEffect(()=>{
@@ -29,7 +34,7 @@ const HomePage = (props) => {
     const p4p = rankings.data.filter((rank)=>rank.type == "p4p")
 
     return (
-        <div>
+        <div className={classes.background}>
             <div>
                 <Navbar
                     setSideBarMenuOpen={setSideBarMenuOpen}
@@ -41,21 +46,35 @@ const HomePage = (props) => {
                     sell={<Link className to="sell-items">Sell </Link>}
                     rankings={<Link to="news&rankings">News & Rankings </Link>}
                 />
-                }
-                <HomePageHeader/>
-                <HomePageImageDisplay />
-                {p4p &&
-                    <MiniRankingsList 
-                    rankings={p4p}
-                    title={"P4P Rankings"}
-                    />
-                }
-                {division &&
-                    <MiniRankingsList 
-                    rankings={division}
-                    title={"Divisional Rankings"}
-                    />
-                }
+                 }
+                    <HomePageHeader/>
+                {/* todo - image timer */}
+                <HomePageImageDisplay/>
+                <hr className={classes.hrHead}/>
+                <Grid  container>
+                    <Grid className={classes.rankCol} container item md={6}>
+                        <div>
+                            {p4p &&
+                                <MiniRankingsList 
+                                rankings={p4p}
+                                title={"P4P Rankings"}
+                            />
+                            }
+                        </div>                     
+                    </Grid>
+                    <Grid className={classes.rankCol} container item md={6}>
+                        <div >
+                            {division &&
+                                <MiniRankingsList 
+                                rankings={division}
+                                title={"Divisional Rankings"}
+                                />
+                            }
+                        </div>
+                
+                    </Grid>
+                </Grid>
+                           
                 <FooterPage />
             </div> 
         </div>
@@ -71,4 +90,4 @@ const mapDispatchToProps = (dispatch) => ({
     fighterDivisionalRankingsData: (data) => dispatch(fighterDivisionalRankingsData(data)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles, {withTheme: true})(HomePage));

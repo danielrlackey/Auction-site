@@ -12,6 +12,8 @@ const MiniRankingsList = (props) => {
                     <ul>
                         <li>
                             {ranking.name}
+                            {"/ "}
+                            {ranking.division}
                         </li>
                     </ul>
                 )

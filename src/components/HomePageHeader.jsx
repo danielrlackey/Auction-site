@@ -2,18 +2,26 @@ import React from "react";
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 
-const HomePageHeader = () => {
+// styling imports
+import { withStyles } from '@material-ui/core/styles';
+import {styles} from "./HomePageHeader.styles.js";
+
+const HomePageHeader = (props) => {
+
+  const { classes } = props;
 
     return (
         <Jumbotron fluid>
-  <Container>
-    <h1>A place for fight fans!</h1>
+  <Container className={classes.homePageHeader}>
+    <h1>Finally a place for fight fans</h1>
     <p>
-      finally a place to buy and sell fight memorabilia!
+      Welcome to FightAuction a Place where fight fans can but and sell fight memorabilia!
+      or you can just catch up on the latest news and rankings.
     </p>
   </Container>
 </Jumbotron>
     );
 }
 
-export default HomePageHeader;
+export default (withStyles(styles, {withTheme: true})(HomePageHeader));
+// export default HomePageHeader;

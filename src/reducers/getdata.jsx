@@ -9,18 +9,19 @@ const initialState = {
 const FighterRankingsReducer = (state = initialState, action) => {
         switch(action.type) {
             case GET_DATA_REQUEST:
-             
-            return {
-                ...state,
-                data: [
-                    ...state.data,
-                    ...action.payload.p4pFighters
-                ],
-                error: ""
-                }
-                
+             if(action.payload){
+                return {
+                    ...state,
+                    data: [
+                        ...state.data,
+                        ...action.payload.p4pFighters
+                    ],
+                    error: ""
+                    }
+             }            
                 case GET_DIVISIONAL_DATA:
-    
+                
+                    if(action.payload){
                     return {
                         ...state,
                         data: [
@@ -29,6 +30,7 @@ const FighterRankingsReducer = (state = initialState, action) => {
                         ],
                         error: ""
                 }
+            }
             case GET_DATA_SUCCESS:
             return {
                 ...state,
