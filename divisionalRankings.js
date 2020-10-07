@@ -1,6 +1,7 @@
 const divisionalRankings = {
     champsByDivision: [
-        {
+        {   
+            type:"div",
             division: "Heavyweight",
             name: "Tyson Fury",
             record: "30-0-1",
@@ -11,7 +12,8 @@ const divisionalRankings = {
             height: "6'9",
             reach: 85,
         },
-        {
+        {   
+            type:"div",
             division: "Cruiserweight",
             name: "Mairis Briedis",
             record: "27-1-0",
@@ -23,6 +25,7 @@ const divisionalRankings = {
             reach: 75,
         },
         {
+            type:"div",
             division: "Light Heavyweight",
             name: "Sergey Kovalev",
             record: "34-4-0",
@@ -34,6 +37,7 @@ const divisionalRankings = {
             reach: 72.5,
         },
         {
+            type:"div",
             division: "Super Middleweight",
             name: "Callum Smith",
             record: "27-0-0",
@@ -45,6 +49,7 @@ const divisionalRankings = {
             reach: 78,
         },
         {
+            type:"div",
             division: "Middleweight",
             name: "Saul Alvarez",
             record: "53-1-0",
@@ -57,6 +62,7 @@ const divisionalRankings = {
             reach: 70.5,
         },
         {
+            type:"div",
             division: "Super Welterweight",
             name: "Jermell Charlo",
             record: "34-1-0",
@@ -68,6 +74,7 @@ const divisionalRankings = {
             reach: 73,
         },
         {
+            type:"div",
             division: "Weltherweight",
             name: "Errol Spence Jr",
             record: "26-0-0",
@@ -80,6 +87,7 @@ const divisionalRankings = {
             reach: 72,
         },
         {
+            type:"div",
             division: "Super Lightweight",
             name: "Josh Taylor",
             record: "17-0-0",
@@ -91,6 +99,7 @@ const divisionalRankings = {
             reach: 69.5,
         },
         {
+            type:"div",
             division: "Lightweight",
             name: "Vasyl Lomachenko",
             record: "14-1-0",
@@ -102,6 +111,7 @@ const divisionalRankings = {
             reach: 65.5,
         },
         {
+            type:"div",
             division: "Super Featherweight",
             name: "Miguel Berchelt",
             record: "37-1-0",

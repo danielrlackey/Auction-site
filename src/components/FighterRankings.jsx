@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import {fighterRankingsData, fighterDivisionalRankingsData} from "../actions/getdata.jsx";
 import BoxingRankingTable from "./BoxingRankingTable.jsx"
@@ -13,25 +13,25 @@ const {rankings} = props
         props.fighterRankingsData()
     },[])
 
-    console.log(rankings)
-    let p4p = [];
-    rankings.data.forEach((ranking)=>{
-        if(!ranking.division){
-            p4p.push(ranking)
-            console.log(p4p, 'oi')
-        }
-    })
-
-    console.log(p4p, "cuck")
+    const division = rankings.data.filter((rank) => rank.type == "div")
+    const p4p = rankings.data.filter((rank)=>rank.type == "p4p")
     return(
+       
         <div>
-            <h1>P4P standings</h1>
-            {/* {rankings.data &&
-                  <BoxingRankingTable
-                  rankings={rankings}     
-              />
-            } */}
- 
+            {rankings.data &&
+                <div>
+                    <BoxingRankingTable
+                    rankings={p4p} 
+                    title={"P4P Rankings"}    
+                />
+                    <BoxingRankingTable 
+                    rankings={division}
+                    title={"Divisional Rankings"} 
+                />
+                    
+                </div>             
+            }
+                
         </div>
     )
 }

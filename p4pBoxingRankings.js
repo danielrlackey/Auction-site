@@ -1,6 +1,7 @@
 const p4pBoxingRankings = {
     p4pFighters:[
-        {
+        {   
+            type:"p4p",
             name: "Saul Alvarez",
             record: "53-1-0",
             kos: 36,
@@ -13,6 +14,7 @@ const p4pBoxingRankings = {
             reach: 70.5,
         },
         {
+            type:"p4p",
             name: "Tyson Luke Fury",
             record: "30-0-1",
             kos: 21,
@@ -25,6 +27,7 @@ const p4pBoxingRankings = {
             reach: 85,
         },
         {
+            type:"p4p",
             name: "Errol Spence Jr",
             record: "26-0-0",
             kos: 21,
@@ -37,6 +40,7 @@ const p4pBoxingRankings = {
             reach: 72,
         },
         {
+            type:"p4p",
             name: "Gennady Golovkin",
             record: "40-1-1",
             kos: 35,
@@ -49,6 +53,7 @@ const p4pBoxingRankings = {
             reach: 70,
          },
          {
+            type:"p4p",
             name: "Deontay Wilder",
             record: "42-1-1",
             kos: 41,
@@ -61,6 +66,7 @@ const p4pBoxingRankings = {
             reach: 83,
         },
         {
+            type:"p4p",
             name: "Terrence Crawford",
             record: "36-0-0",
             kos: 27,
@@ -73,6 +79,7 @@ const p4pBoxingRankings = {
             reach: 74,
         },
         {
+            type:"p4p",
             name: "Anthony Joshua",
             record: "23-1-0",
             kos: 21,
@@ -85,6 +92,7 @@ const p4pBoxingRankings = {
             reach: 82,
         },
         {
+            type:"p4p",
             name: "Vasyl Lomachenko",
             record: "14-1-0",
             kos: 10,
@@ -97,6 +105,7 @@ const p4pBoxingRankings = {
             reach: 65.5,
         },
         {
+            type:"p4p",
             name: "Manny Pacquiao",
             record: "62-7-2",
             kos: 39,
@@ -109,6 +118,7 @@ const p4pBoxingRankings = {
             reach: 67,
         },
         {
+            type:"p4p",
             name: "Alexander Povetkin",
             record: "36-2-1",
             kos: 25,

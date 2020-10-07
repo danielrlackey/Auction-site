@@ -12,7 +12,6 @@ export const fighterRankingsData = () => {
        type: GET_DATA_REQUEST,
        payload: axios.get(baseUrl + "/rankings" )
     .then((res)=>{
-        console.log(res.data)
         return res.data
     })
     .catch((err=>{
@@ -28,7 +27,6 @@ export const fighterDivisionalRankingsData = () => {
          type: GET_DIVISIONAL_DATA,
          payload: axios.get(baseUrl + "/rankings/divisions" )
       .then((res)=>{
-          console.log(res.data)
           return res.data
       })
       .catch((err=>{
