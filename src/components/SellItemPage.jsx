@@ -15,14 +15,21 @@ const SellItemPage = (props) => {
     return (
         <div className={classes.background}>
             <Navbar />
-            <p>This is the page where stuff is sold</p> 
-            <Link 
+            <div className={classes.header}>
+                <p>This is the page where stuff is sold</p> 
+                <Link 
                 to="/"
                 className={classes.link}
-            >
-            Home
-            </Link>
-            <SellItemForm />
+                >
+                Home
+                </Link>
+            </div>
+            <div className={classes.form}>
+                <SellItemForm
+                    className={classes.mainForm}
+                 />
+            </div>
+            
             <FooterPage />
         </div>
     );

@@ -1,7 +1,6 @@
 export const styles = theme => ({
     root: {
       flexGrow: 1,
-      
     },
     menuButton: {
       marginRight: theme.spacing(2),
@@ -9,11 +8,30 @@ export const styles = theme => ({
     title: {
       flexGrow: 1,
     },
-    link: {
+    inactive: {
       textDecoration: "none",
-      color: "white"
+      color: "white",
+      fontWeight: 700,
+      marginRight: "15px",
     },
-    btnColor: {
-      color: "white"
+    active: {
+      textDecoration: "none",
+      color: "#c2252f",
+      fontWeight: 700,
+      marginRight: "15px",
     },
+    logo:{
+      margin: 0,
+      padding: 0,
+      height: "30px",
+      display: "flex",
+      align: "left",
+    },
+    color: {
+      background: "rgba(0,0,0,0.7)",
+      position: "fixed",
+      top: 0,
+      width: "100%",
+      marginBottom: "50px",
+    }
   });

@@ -13,8 +13,9 @@ const {rankings} = props
         props.fighterRankingsData()
     },[])
 
-    const division = rankings.data.filter((rank) => rank.type == "div")
-    const p4p = rankings.data.filter((rank)=>rank.type == "p4p")
+    const division = rankings.champsByDivision
+    const p4p = rankings.p4pFighters
+    
     return(
        
         <div>

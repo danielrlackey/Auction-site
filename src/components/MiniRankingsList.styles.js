@@ -1,6 +1,6 @@
 export const styles = theme => ({
    link: {
         textDecoration: "none",
-        color: "white"
-   }
+        color: "#c2252f"
+   },
   });

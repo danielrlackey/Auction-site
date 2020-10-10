@@ -2,18 +2,20 @@ import { GET_DATA_REQUEST, GET_DATA_SUCCESS, GET_DATA_ERROR, GET_DIVISIONAL_DATA
 
 const initialState = {
     data: [],
+    p4pFighters: [],
+    champsByDivision:[],
     error: ""
 };
 
 
 const FighterRankingsReducer = (state = initialState, action) => {
-        switch(action.type) {
+       console.log(state.data)
+    switch(action.type) {
             case GET_DATA_REQUEST:
              if(action.payload){
                 return {
                     ...state,
-                    data: [
-                        ...state.data,
+                    p4pFighters: [  
                         ...action.payload.p4pFighters
                     ],
                     error: ""
@@ -24,8 +26,8 @@ const FighterRankingsReducer = (state = initialState, action) => {
                     if(action.payload){
                     return {
                         ...state,
-                        data: [
-                            ...state.data,
+                        champsByDivision: [
+
                             ...action.payload.champsByDivision
                         ],
                         error: ""

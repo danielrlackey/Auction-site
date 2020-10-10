@@ -13,11 +13,13 @@ const HomePageHeader = (props) => {
     return (
         <Jumbotron fluid>
   <Container className={classes.homePageHeader}>
-    <h1>Finally a place for fight fans</h1>
-    <p>
+    <div>
+      <h1 className={classes.title}>Finally a place for fight fans</h1>
+    </div>
+    <h3>
       Welcome to FightAuction a Place where fight fans can but and sell fight memorabilia!
       or you can just catch up on the latest news and rankings.
-    </p>
+    </h3>
   </Container>
 </Jumbotron>
     );

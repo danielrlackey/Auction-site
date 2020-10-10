@@ -19,16 +19,20 @@ import {styles} from "./HomePage.styles.js";
 const HomePage = (props) => {
 
     const {rankings, classes} = props
-    console.log(rankings,"from home page")
+    
 
     useEffect(()=>{
         props.fighterDivisionalRankingsData()
         props.fighterRankingsData()
     },[])
 
+    // code to duplicate below
+    // const division = rankings.data.filter((rank) => rank.type == "div")
+    // const p4p = rankings.data.filter((rank)=>rank.type == "p4p")
 
-    const division = rankings.data.filter((rank) => rank.type == "div")
-    const p4p = rankings.data.filter((rank)=>rank.type == "p4p")
+
+    const division = rankings.champsByDivision
+    const p4p = rankings.p4pFighters
 
     return (
         <div className={classes.background}>

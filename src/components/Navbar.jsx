@@ -8,53 +8,48 @@ import {styles} from "./Navbar.styles.js";
 import { withStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-
-
+import logoPic from '../images/logo2.png'
+import Box from '@material-ui/core/Box';
   const Navbar = (props) => {
 
   const {classes} = props
 
   return (
     <div className={classes.root}>
-      <AppBar style={{background: "#39393b"}} position="static">
+      <AppBar className={classes.color} position="static">
         <Toolbar >
-          <Typography 
-              variant="h6" 
-              className={classes.title}
-          >
-              FightAuction
-          </Typography>
+          
+          <Box display='flex' flexGrow={1}>
+            <img src={logoPic} alt="logo" className={classes.logo} />
+          </Box>
+         
           <NavLink 
               to="sell-items" 
-              className={classes.link}>
-          <Button 
-            className={classes.btnColor}
-              >Sell Memoribilia
-          </Button>
+              className={classes.inactive}
+              activeClassName={classes.active}
+          >
+              Sell Memoribilia
           </NavLink>
           <NavLink 
               to="rankings" 
-              className={classes.link}>
-          <Button 
-            className={classes.btnColor}
-              >News
-          </Button>
+              className={classes.inactive}
+              activeClassName={classes.active}
+          >
+              News
           </NavLink>
           <NavLink 
               to="rankings" 
-              className={classes.link}>
-          <Button 
-            className={classes.btnColor}
-              >Rankings
-          </Button>
+              className={classes.inactive}
+              activeClassName={classes.active}
+          >
+              Rankings
           </NavLink>
           <NavLink 
               to="browse-items" 
-              className={classes.link}>
-          <Button 
-            className={classes.btnColor}
-              >Browse
-          </Button>
+              className={classes.inactive}
+              activeClassName={classes.active}
+          >
+              Browse
           </NavLink>
         </Toolbar>
       </AppBar>

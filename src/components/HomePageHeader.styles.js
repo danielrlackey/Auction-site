@@ -2,8 +2,15 @@ export const styles = theme => ({
 
 
     background: {
-        backgroundColor: "#37383b",
+        backgroundColor: "black",
         color: "white"
+    },
+
+    title:{
+        fontSize: "70px",
+        textShadow: "2px 2px 4px #000000",
+        fontFamily: 'Anton, sans-serif',
+
     },
 
     rankCol:{
@@ -15,7 +22,7 @@ export const styles = theme => ({
     },
     homePageHeader: {
         textAlign: "center",
-        marginTop: "50px",
+        marginTop: "150px",
         marginBottom: "50px"
     }
     

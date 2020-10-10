@@ -3,8 +3,8 @@ export const styles = theme => ({
 
 
     background: {
-        backgroundColor: "#6d6f75",
-        color: "white"
+        backgroundColor: "#fff",
+        color: "#c2252f"
     },
 
     rankCol:{
