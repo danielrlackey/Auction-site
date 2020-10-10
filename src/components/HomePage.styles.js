@@ -17,6 +17,11 @@ export const styles = theme => ({
     homePageHeader: {
         display: "flex",
         justifyContent: "center"
-    }
+    },
+
+    picRow:{
+        display: "flex",
+        justifyContent: "center"
+    },
     
     });

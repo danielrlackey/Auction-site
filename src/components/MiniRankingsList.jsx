@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Paper from '@material-ui/core/Paper';
 // styling imports
 import { withStyles } from '@material-ui/core/styles';
 import {styles} from "./MiniRankingsList.styles.js";
@@ -10,7 +10,7 @@ const MiniRankingsList = (props) => {
     const {rankings, classes, title} = props
     console.log(rankings, "hello")
     return(
-        <div>
+        <Paper>
             <Link 
             to="rankings"
             className={classes.link}
@@ -29,7 +29,7 @@ const MiniRankingsList = (props) => {
                 )
                 
             })}
-        </div>
+        </Paper>
     )
 }
 

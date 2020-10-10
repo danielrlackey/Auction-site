@@ -16,13 +16,7 @@ const SellItemPage = (props) => {
         <div className={classes.background}>
             <Navbar />
             <div className={classes.header}>
-                <p>This is the page where stuff is sold</p> 
-                <Link 
-                to="/"
-                className={classes.link}
-                >
-                Home
-                </Link>
+                <h1>Upload your memoribilia here.</h1>
             </div>
             <div className={classes.form}>
                 <SellItemForm

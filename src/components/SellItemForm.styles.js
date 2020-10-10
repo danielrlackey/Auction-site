@@ -12,15 +12,19 @@ paper: {
   inputArea: {
     marginTop: "5px",
     backgroundColor: "white",
-    border: "none"
+    border: "1px solid #4f5054",
+    boxShadow: "2px 2px #4f5054"
+  },
+  btnContainer: {
+    textAlign: "center",
   },
   btn: {
-    display: "flex",
-    justifyContent: "center",
+    border: "1px solid #4f5054",
+    boxShadow: "2px 2px #4f5054",
     marginTop: "10px",
-    color: "#39393b"
-    
-  }
+    color: "#c2252f"
+  },
+
 
 });
 

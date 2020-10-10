@@ -12,13 +12,15 @@ export const styles = theme => ({
       textDecoration: "none",
       color: "white",
       fontWeight: 700,
-      marginRight: "15px",
+      marginLeft: "15px",
+      marginTop: "5px",
     },
     active: {
       textDecoration: "none",
       color: "#c2252f",
       fontWeight: 700,
-      marginRight: "15px",
+      marginLeft: "15px",
+      marginTop: "5px",
     },
     logo:{
       margin: 0,

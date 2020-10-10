@@ -18,11 +18,16 @@ import Box from '@material-ui/core/Box';
     <div className={classes.root}>
       <AppBar className={classes.color} position="static">
         <Toolbar >
-          
           <Box display='flex' flexGrow={1}>
             <img src={logoPic} alt="logo" className={classes.logo} />
+            <NavLink 
+            to="/" 
+            className={classes.inactive}
+            activeClassName={classes.active}
+          >
+            Home
+          </NavLink>
           </Box>
-         
           <NavLink 
               to="sell-items" 
               className={classes.inactive}

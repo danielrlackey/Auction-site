@@ -1,19 +1,20 @@
 export const styles = theme => ({
 
     background: {
-        backgroundColor: "#6d6f75",
-        color: "white"
+        backgroundColor: "white",
+        color: "#c2252f"
     },
     header: {
         display: "flex",
         justifyContent: "center",
+        marginTop: "100px",
     },
     link: {
         textDecoration: "none",
-        color: "white",
+        color: "#c2252f",
     },
     form: {
-        marginTop: "10%",
+        marginTop: "4%",
         marginLeft: "20%",
         marginRight: "20%",
     }

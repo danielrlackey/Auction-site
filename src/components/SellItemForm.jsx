@@ -76,8 +76,10 @@ const SellItemForm = (props) => {
                     value={pictures}
                     onchange={(e) => setPictures(e.target.file)}
                 />
-            <div className={classes.btn}>
-                <Button onClick={postItemForSale}>Submit</Button>
+            <div className={classes.btnContainer}>
+                <Button 
+                    className={classes.btn}
+                    onClick={postItemForSale}>Submit</Button>
             </div>
             </form>
                 <SimpleModal

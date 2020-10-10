@@ -40,7 +40,9 @@ const HomePage = (props) => {
                 <Navbar />
                 <HomePageHeader />
                 {/* todo - image timer */}
-                <HomePageImageDisplay/>
+                <div className={classes.picRow}>
+                        <HomePageImageDisplay/>
+                    </div>
                 <hr className={classes.hrHead}/>
                 <Grid  container>
                     <Grid className={classes.rankCol} container item md={6}>
