@@ -15,7 +15,7 @@ const BrowseItemsPage = (props) => {
     useEffect(()=>{
         getItems()
     },[])
-
+    
     return (
 
         <div>
